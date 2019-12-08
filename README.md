@@ -69,7 +69,8 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 MicroElements.Swashbuckle.FluentValidation | Swashbuckle.AspNetCore | FluentValidation
 ---------|----------|---------
 [1.1.0, 2.0.0) | [3.0.0, 4.0.0) | >=7.2.0
-[2.0.0, 3.0.0) | [4.0.0, 5.0.0) | >=8.1.3
+[2.0.0, 2.3.0) | [4.0.0, 5.0.0) | [8.1.3, 8.3.0)
+[2.3.0, 3.0.0) | [4.0.0, 5.0.0) | >=8.3.0
 [3.0.0, 4.0.0) | [5.0.0-rc4, 6.0.0) | >=8.3.0
 
 ## Sample application

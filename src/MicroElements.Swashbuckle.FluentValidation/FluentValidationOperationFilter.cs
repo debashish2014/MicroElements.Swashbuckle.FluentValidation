@@ -110,6 +110,12 @@ namespace MicroElements.Swashbuckle.FluentValidation
                                     if (schema.Properties != null && schema.Properties.Count > 0)
                                     {
                                         lazyLog.LogOnce();
+                                        
+                                        // try to fix property casing (between property name and schema property name)
+                                        var schemaProperty = schema.Properties.Keys.FirstOrDefault(k => string.Equals(k, schemaPropertyName, StringComparison.OrdinalIgnoreCase));
+                                        if (schemaProperty != null)
+                                            schemaPropertyName = schemaProperty;
+
                                         var schemaFilterContext = new SchemaFilterContext(new ApiModel(parameterType), context.SchemaRepository, context.SchemaGenerator);
                                         rule.Apply(new RuleContext(schema, schemaFilterContext, schemaPropertyName, propertyValidator));
                                         _logger.LogDebug($"Rule '{rule.Name}' applied for property '{parameterType.Name}.{operationParameter.Name}'.");
